@@ -1,8 +1,8 @@
-﻿using Calculator.Models;
+﻿using Laboratorium_2.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Calculator.Controllers
+namespace Laboratorium_2.Controllers
 {
     public class HomeController : Controller
     {

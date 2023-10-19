@@ -20,7 +20,7 @@
                         return "*";
                     case Operators.Div:
                         return "/";
-                default:
+                    default:
                         return "";
                 }
             }
@@ -43,7 +43,7 @@
                     return (double)(a * b);
                 case Operators.Div:
                     return (double)(a / b);
-            default: return double.NaN;
+                default: return double.NaN;
             }
         }
     }
