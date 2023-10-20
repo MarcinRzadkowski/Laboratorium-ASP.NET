@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Laboratorium_2.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Numerics;
 
 namespace Laboratorium_2.Controllers
 {
@@ -14,11 +16,11 @@ namespace Laboratorium_2.Controllers
         }
 
         [HttpPost]
-        public IActionResult Result(Models.Calculator model)
+        public IActionResult Result(Calculator model)
         {
             if (!model.IsValid())
             {
-                return View("Error");
+                return BadRequest();
             }
             return View(model);
         }

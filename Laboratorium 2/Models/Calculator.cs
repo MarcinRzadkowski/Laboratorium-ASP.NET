@@ -2,15 +2,15 @@
 {
     public class Calculator
     {
-        public Operators? Operator { get; set; }
+        public Operators? Op { get; set; }
         public double? a { get; set; }
         public double? b { get; set; }
 
-        public String Op
+        public string Operator
         {
             get
             {
-                switch (Operator)
+                switch (Op)
                 {
                     case Operators.Add:
                         return "+";
@@ -20,20 +20,19 @@
                         return "*";
                     case Operators.Div:
                         return "/";
-                    default:
-                        return "";
+                    default: return "";
                 }
             }
+            set { }
         }
-
         public bool IsValid()
         {
-            return Operator != null && a != null && b != null;
+            return a != null && b != null && Op != null ;
         }
 
         public double Calculate()
         {
-            switch (Operator)
+            switch (Op)
             {
                 case Operators.Add:
                     return (double)(a + b);
