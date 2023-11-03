@@ -12,9 +12,8 @@ namespace Laboratorium_3___App.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            return View(_contactService.FindAll());
         }
-
         [HttpGet]
         public IActionResult Create()
         {

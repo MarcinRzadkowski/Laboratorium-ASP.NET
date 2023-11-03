@@ -25,14 +25,9 @@
             return _contacts.Values.ToList();
         }
 
-        public Contact? FindByID(int id)
-        {
-            return _contacts[id];
-        }
-
         public Contact? FindById(int id)
         {
-            throw new NotImplementedException();
+            return _contacts[id];
         }
 
         public void Update(Contact contact)
