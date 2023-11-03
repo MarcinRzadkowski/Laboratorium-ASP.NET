@@ -44,5 +44,11 @@ namespace Laboratorium_3___App.Controllers
             }
             return View();
         }
+        [HttpGet]
+        public IActionResult Details (int id)
+        {
+            return View(_contactService.FindById(id));
+        }
+        
     }    
 }

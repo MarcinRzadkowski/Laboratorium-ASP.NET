@@ -1,5 +1,34 @@
-﻿@*
+﻿@model Contact
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
+<h1>Szczegóły</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imię</th>
+            <th>Adres e-mail</th>
+            <th>Nr telefonu</th>
+            <th>Data urodzenia</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Model.Name
+            </td>
+            <td>
+                @Model.Email
+            </td>
+            <td>
+                @Model.Phone
+            </td>
+            <td>
+                @Model.Birth
+            </td>
+        </tr>        
+    </tbody>
+</table>
+<a class="btn btn-primary" asp-controller="Contact" asp-action="Index">Wróć</a>
