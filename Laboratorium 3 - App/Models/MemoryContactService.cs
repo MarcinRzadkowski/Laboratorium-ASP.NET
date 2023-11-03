@@ -1,11 +1,11 @@
 ﻿namespace Laboratorium_3___App.Models
 {
-    public class MemoryContactService
+    public class MemoryContactService : IContactService
     {
         private readonly Dictionary<int, Contact> _contacts = 
             new Dictionary<int, Contact>()
             {
-                {  1, new Contact() {Id = 1, Name="Adam", Email="adam@wsei.edu.pl", Phone = "11223123" } },
+                { 1, new Contact() {Id = 1, Name="Adam", Email="adam@wsei.edu.pl", Phone = "11223123" } },
                 { 2, new Contact() {Id = 2, Name="Ewa", Email="ewa@wsei.edu.pl", Phone = "51223123" } }
             };
         private int _id = 3;
@@ -28,6 +28,11 @@
         public Contact? FindByID(int id)
         {
             return _contacts[id];
+        }
+
+        public Contact? FindById(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Contact contact)

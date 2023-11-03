@@ -12,7 +12,7 @@ namespace Laboratorium_3___App.Models
         public string Email { get; set; }
         [Phone(ErrorMessage = "Niepoprawny numer telefonu")]
         public string Phone { get; set; }
-        [DataType(DataType.Date]
+        [DataType(DataType.Date)]
         public string? Birth { get; set; }
     }
 }
