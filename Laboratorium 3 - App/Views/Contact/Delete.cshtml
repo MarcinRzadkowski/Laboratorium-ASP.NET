@@ -4,7 +4,8 @@
 *@
 @{
 }
-
+<h1>Czy na pewno chcesz usunąć kontakt ?</h1>
 <form asp-controller="Contact" asp-action="Delete" method="post">
-    <button type="submit">Dodaj</button>
+    <button class="btn btn-primary" type="submit">Tak, Usuń</button>
+    <a class="btn btn-primary" asp-controller="Contact" asp-action="Index">Nie, Wróć</a>
 </form>
