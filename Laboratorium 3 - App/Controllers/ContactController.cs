@@ -49,6 +49,17 @@ namespace Laboratorium_3___App.Controllers
         {
             return View(_contactService.FindById(id));
         }
+        [HttpGet]
+        public IActionResult Delete (int id)
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Delete (Contact model)
+        {
+            _contactService.DeleteById(model.Id);
+            return RedirectToAction("Index");
+        }
         
     }    
 }
