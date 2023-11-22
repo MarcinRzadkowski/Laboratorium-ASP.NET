@@ -2,7 +2,7 @@
 {
     public class MemoryContactService : IContactService
     {
-        IDateTimeProvider _timeProvider;
+        //IDateTimeProvider _timeProvider;
         //public IDateTimeProvider TimeProvider { get => _timeProvider; }
 
         private readonly Dictionary<int, Contact> _contacts = 
@@ -19,7 +19,7 @@
         {
 
             contact.Id = _id++;
-            _contacts[contact.Created] = _timeProvider;
+            //_contacts[contact.Created] = _timeProvider;
             _contacts[contact.Id] = contact;
         }
 
