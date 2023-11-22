@@ -2,6 +2,9 @@
 {
     public class MemoryContactService : IContactService
     {
+        IDateTimeProvider _timeProvider;
+        //public IDateTimeProvider TimeProvider { get => _timeProvider; }
+
         private readonly Dictionary<int, Contact> _contacts = 
             new Dictionary<int, Contact>()
             {
@@ -9,9 +12,14 @@
                 { 2, new Contact() {Id = 2, Name="Ewa", Email="ewa@wsei.edu.pl", Phone = "51223123" } }
             };
         private int _id = 3;
+
+        
+
         public void Add(Contact contact)
         {
+
             contact.Id = _id++;
+            _contacts[contact.Created] = _timeProvider;
             _contacts[contact.Id] = contact;
         }
 
