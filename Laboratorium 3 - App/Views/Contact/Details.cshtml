@@ -8,10 +8,12 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Imię</th>
-            <th>Adres e-mail</th>
-            <th>Nr telefonu</th>
-            <th>Data urodzenia</th>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Phone)</th>
+            <th>@Html.DisplayNameFor(model => model.Birth)</th>
+            <th>@Html.DisplayNameFor(model => model.Priority)</th>
+            <th>@Html.DisplayNameFor(model => model.Created)</th>
         </tr>
     </thead>
     <tbody>
@@ -30,6 +32,9 @@
             </td>
             <td>
                 @Model.Priority
+            </td>
+            <td>
+                @Model.Created
             </td>
         </tr>        
     </tbody>

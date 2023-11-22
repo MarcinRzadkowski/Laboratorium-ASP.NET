@@ -3,7 +3,7 @@
     public class EmployeeService : IEmployeeService
     {
         private Dictionary<int, Employee> _employees;
-        private int _id = 1;
+        private int _id = 0;
 
         public void Add(Employee employee)
         {

@@ -5,6 +5,7 @@ namespace Laboratorium_3___App.Models
 {
     public class Contact
     {
+        [HiddenInput]
         public int Id { get; set; }
         [Required(ErrorMessage = "Musisz podać imię")]
         [StringLength(50, ErrorMessage = "Imię jest za długie")]
