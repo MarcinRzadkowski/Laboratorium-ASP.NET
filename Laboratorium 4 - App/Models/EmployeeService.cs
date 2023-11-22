@@ -11,7 +11,7 @@
             _employees[employee.Id] = employee;
         }
 
-        public void Delete(int id)
+        public void DeleteById(int id)
         {
             _employees.Remove(id);
         }
