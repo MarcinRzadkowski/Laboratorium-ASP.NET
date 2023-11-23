@@ -10,7 +10,7 @@ namespace Laboratorium_4___App
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddSingleton<IEmployeeService, EmployeeService>();
+            builder.Services.AddSingleton<IEmployeeService, MemoryEmployeeService>();
 
             var app = builder.Build();
 

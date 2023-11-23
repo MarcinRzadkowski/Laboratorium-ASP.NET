@@ -33,7 +33,7 @@
         <div>
             <span class="text-danger" asp-validation-for="Departament"></span>
         </div>
-        <input class="form-control" asp-for="Departament"/>
+        <select class="form-control" asp-for="Departament" asp-items="@Html.GetEnumSelectList<Departament>()"></select>
     </div>
     <div>
         <label asp-for="Position"></label>

@@ -1,5 +1,11 @@
-﻿@*
+﻿@model Employee
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
+<h1>Czy na pewno chcesz usunąć kontakt ?</h1>
+<form asp-controller="Employee" asp-action="Delete" method="post">
+    <button class="btn btn-primary" type="submit">Tak, Usuń</button>
+    <a class="btn btn-primary" asp-controller="Employee" asp-action="Index">Nie, Wróć</a>
+</form>

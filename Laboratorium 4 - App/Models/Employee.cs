@@ -10,20 +10,15 @@ namespace Laboratorium_4___App.Models
         [Required(ErrorMessage = "To pole jest wymagane")]
         [Display(Name = "Imię")]
         public string FirstName { get; set; }
-        [Required(ErrorMessage = "To pole jest wymagane")]
         [Display(Name = "Nazwisko")]
-        public string LastName { get; set; }
-        [Required(ErrorMessage = "To pole jest wymagane")]
+        public string LastName { get; set; }        
         [RegularExpression("[0-9]{4}[0-3]{1}[0-9]{6}",ErrorMessage = "Nieprawidłowy format numeru PESEL" )]
         [Display(Name = "PESEL")]
         public string PESEL { get; set; }
-        [Required(ErrorMessage = "To pole jest wymagane")]
         [Display(Name = "Stanowisko")]
-        public string Position { get; set; }
-        [Required(ErrorMessage = "To pole jest wymagane")]
+        public string Position { get; set; }        
         [Display(Name = "Dział")]
-        public string Departament { get; set; }
-        [Required(ErrorMessage = "To pole jest wymagane")]
+        public Departament Departament { get; set; }
         [DataType(DataType.Date)]
         [Display(Name = "Data zatrudnienia")]
         public string DateOfEmployment { get; set; }
