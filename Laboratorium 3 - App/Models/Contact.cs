@@ -19,7 +19,7 @@ namespace Laboratorium_3___App.Models
         public string Phone { get; set; }
         [DataType(DataType.Date)]
         [Display(Name = "Data urodzenia")]
-        public string? Birth { get; set; }
+        public DateTime? Birth { get; set; }
         [Display(Name = "Priorytet")]
         public Priority Priority { get; set; }
         [HiddenInput]
