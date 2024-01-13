@@ -2,10 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.Sqlite;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace Data
 {
-    public class AppDbContext: DbContext
+    public class AppDbContext: IdentityDbContext<IdentityUser>
     {
         public DbSet<ContactEntity> Contacts { get; set; }
 
@@ -16,6 +19,8 @@ namespace Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+
             modelBuilder.Entity<ContactEntity>()
                 .HasKey(e => e.ContactId);
             modelBuilder.Entity<ContactEntity>()
