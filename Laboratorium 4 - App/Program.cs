@@ -11,6 +11,8 @@ namespace Laboratorium_4___App
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddSingleton<IEmployeeService, MemoryEmployeeService>();
+            builder.Services.AddDbContext<Data_App.AppDbContext>();
+            builder.Services.AddTransient<IEmployeeService, EFEmployeeService>();
 
             var app = builder.Build();
 

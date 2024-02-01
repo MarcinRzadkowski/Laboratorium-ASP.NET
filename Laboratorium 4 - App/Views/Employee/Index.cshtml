@@ -17,6 +17,12 @@
         <th>
             Dział
         </th>
+        <th>
+            Pozycja
+        </th>
+        <th>
+            Data zatrudnienia
+        </th>
     </tr>
     @foreach(var item in Model)
     {
@@ -29,6 +35,12 @@
             </td>
             <td>
                 @item.Departament
+            </td>
+            <td>
+                @item.Position
+            </td>
+            <td>
+                @item.DateOfEmployment
             </td>
             <td>
                 <a class="btn btn-primary"

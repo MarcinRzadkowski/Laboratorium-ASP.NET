@@ -2,17 +2,16 @@
 {
     public class MemoryEmployeeService : IEmployeeService
     {
-        private Dictionary<int, Employee> _employees = 
-            new Dictionary<int, Employee>()
-            {
-                {1, new Employee() { Id =1, FirstName = "Jan", LastName = "Kowalski", PESEL = "68121213214", Position = "junior", Departament = Departament.Sales, DateOfEmployment = "19.11.2001"} },
-            };
+        private Dictionary<int, Employee> _employees =
+            new Dictionary<int, Employee>();
+            
         private int _id = 1;
 
-        public void Add(Employee employee)
+        public int Add(Employee employee)
         {
             employee.Id = _id++;
             _employees[employee.Id] = employee;
+            return employee.Id;
         }
 
         public void DeleteById(int id)
