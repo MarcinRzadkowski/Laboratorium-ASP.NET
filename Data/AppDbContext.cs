@@ -21,8 +21,8 @@ namespace Data
         {
             base.OnModelCreating(modelBuilder);
             string ADMIN_ID = Guid.NewGuid().ToString();
-            string USER_ID = Guid.NewGuid().ToString();
             string ADMIN_ROLE_ID = Guid.NewGuid().ToString();
+            string USER_ID = Guid.NewGuid().ToString();            
             string USER_ROLE_ID = Guid.NewGuid().ToString();
 
             // utworzenie roli

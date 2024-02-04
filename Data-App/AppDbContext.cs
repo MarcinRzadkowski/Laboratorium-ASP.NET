@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Data_App
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<IdentityUser>
     {
         public DbSet<EmployeeEntity> Employees { get; set; }
         private string DbPath { get; set; }
@@ -17,12 +17,81 @@ namespace Data_App
             var path = Environment.GetFolderPath(folder);
             DbPath = System.IO.Path.Join(path, "employees.db");
         }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlite($"Data source={DbPath}");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+            string ADMIN_ID = Guid.NewGuid().ToString();
+            string ROLE_ID = Guid.NewGuid().ToString();
+            string USER_ID = Guid.NewGuid().ToString();
+            string USER_ROLE_ID = Guid.NewGuid().ToString();
+
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole()
+                {
+                    Name = "admin",
+                    NormalizedName = "ADMIN",
+                    Id = ROLE_ID,
+                    ConcurrencyStamp = ROLE_ID
+                });
+
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole()
+                {
+                    Name = "user",
+                    NormalizedName = "USER",
+                    Id = USER_ROLE_ID,
+                    ConcurrencyStamp = USER_ROLE_ID
+                }
+                );
+
+            var admin = new IdentityUser()
+            {
+                Id = ADMIN_ID,
+                Email = "admin@wsei.edu.pl",
+                EmailConfirmed = true,
+                UserName = "admin",
+                NormalizedUserName = "ADMIN",
+                NormalizedEmail = "ADMIN@WSEI.EDU.PL"
+            };
+
+            var user = new IdentityUser()
+            {
+                Id = USER_ID,
+                Email = "user@wsei.edu.pl",
+                NormalizedEmail = "USER@WSEI.EDU.PL",
+                EmailConfirmed = true,
+                UserName = "user",
+                NormalizedUserName = "USER",
+            };
+
+            PasswordHasher<IdentityUser> ph = new PasswordHasher<IdentityUser>();
+            admin.PasswordHash = ph.HashPassword(admin, "123abc!ABC");
+            modelBuilder.Entity<IdentityRole>().HasData(admin);
+
+            user.PasswordHash = ph.HashPassword(user, "password");
+            modelBuilder.Entity<IdentityUser>().HasData(user);
+                        
+            modelBuilder.Entity<IdentityUserRole<string>>().HasData(
+                new IdentityUserRole<string>
+                {
+                    RoleId = ROLE_ID,
+                    UserId = ADMIN_ID
+                });
+
+            modelBuilder.Entity<IdentityUserRole<string>>().HasData(
+                new IdentityUserRole<string>
+                {
+                    RoleId = USER_ROLE_ID,
+                    UserId = USER_ID,
+                }
+                );
+
             modelBuilder.Entity<EmployeeEntity>().HasData(
                 new EmployeeEntity() 
                 { 
