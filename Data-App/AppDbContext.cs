@@ -94,8 +94,8 @@ namespace Data_App
 
             modelBuilder.Entity<EmployeeEntity>().HasData(
                 new EmployeeEntity() 
-                { 
-                    Id =1,
+                {
+                    EmployeeId = 1,
                     FirstName = "Jan",
                     LastName = "Nowak",
                     PESEL = "8902137123",
@@ -105,7 +105,7 @@ namespace Data_App
                 },
                 new EmployeeEntity() 
                 {
-                    Id = 2,
+                    EmployeeId = 2,
                     FirstName = "Jan",
                     LastName = "Kowalski",
                     PESEL = "6902137420",

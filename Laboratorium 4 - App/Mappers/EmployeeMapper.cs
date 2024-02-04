@@ -9,7 +9,7 @@ namespace Laboratorium_4___App.Mappers
         {
             return new Employee()
             {
-                Id = entity.Id,
+                Id = entity.EmployeeId,
                 FirstName = entity.FirstName,
                 LastName = entity.LastName,
                 PESEL = entity.PESEL,
@@ -24,7 +24,7 @@ namespace Laboratorium_4___App.Mappers
         {
             return new EmployeeEntity()
             {
-                Id = model.Id,
+                EmployeeId = model.Id,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 PESEL = model.PESEL,

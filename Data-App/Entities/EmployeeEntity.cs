@@ -11,7 +11,8 @@ namespace Data_App.Entities
     [Table("employees")]
     public class EmployeeEntity
     {
-        public int Id { get; set; }
+        [Key]
+        public int EmployeeId { get; set; }
         [MaxLength(50)]
         [Required]
         public string FirstName { get; set; }
