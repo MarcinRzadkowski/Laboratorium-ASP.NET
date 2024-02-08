@@ -1,0 +1,60 @@
+﻿@model Employee
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form asp-action="Edit" asp-controller="Employee" method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="FirstName"></label>
+        <div>
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        <input class="form-control" type="text" asp-for="FirstName" />
+    </div>
+    <div>
+        <label asp-for="LastName"></label>
+        <div>
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+        <input class="form-control" type="text" asp-for="LastName" />
+    </div>
+    <div>
+        <label asp-for="PESEL"></label>
+        <div>
+            <span asp-validation-for="PESEL" class="text-danger"></span>
+        </div>
+        <input class="form-control" type="text" asp-for="PESEL" />
+    </div>
+    <div>
+        <label asp-for="Departament"></label>
+        <div>
+            <span asp-validation-for="Departament" class="text-danger"></span>
+        </div>
+        <select class="form-control" asp-for="Departament" asp-items="@Html.GetEnumSelectList<Departament>()"></select>
+    </div>
+    <div>
+        <label asp-for="Position"></label>
+        <div>
+            <span asp-validation-for="Position" class="text-danger"></span>
+        </div>
+        <input class="form-control" type="text" asp-for="Position" />
+    </div>
+    <div>
+        <label asp-for="DateOfEmployment"></label>
+        <div>
+            <span asp-validation-for="DateOfEmployment" class="text-danger"></span>
+        </div>
+        <input class="form-control" asp-for="DateOfEmployment" />
+    </div>
+    <div>
+        <label asp-for="ReleaseDate"></label>
+        <div>
+            <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+        </div>
+        <input class="form-control" asp-for="ReleaseDate" />
+    </div>
+    <button type="submit">Zapisz</button>
+</form>

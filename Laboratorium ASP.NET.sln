@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enums", "Enums\Enums.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data2", "Data2\Data2.csproj", "{516A84A3-22E8-4E5D-B2D2-C754FA5A4770}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projekt", "Projekt\Projekt.csproj", "{8D35C18A-D39E-4FF0-8979-3FD4C507BB64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Projekt", "Projekt\Projekt.csproj", "{8D35C18A-D39E-4FF0-8979-3FD4C507BB64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProjekt", "DataProjekt\DataProjekt.csproj", "{71C2D3F9-7874-478A-929C-58FE19F87C31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{8D35C18A-D39E-4FF0-8979-3FD4C507BB64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D35C18A-D39E-4FF0-8979-3FD4C507BB64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D35C18A-D39E-4FF0-8979-3FD4C507BB64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71C2D3F9-7874-478A-929C-58FE19F87C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71C2D3F9-7874-478A-929C-58FE19F87C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71C2D3F9-7874-478A-929C-58FE19F87C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71C2D3F9-7874-478A-929C-58FE19F87C31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

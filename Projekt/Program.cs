@@ -1,3 +1,5 @@
+using Projekt.Models;
+
 namespace Projekt
 {
     public class Program
@@ -8,7 +10,7 @@ namespace Projekt
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddSingleton<IEmployeeService, MemoryEmployeeService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

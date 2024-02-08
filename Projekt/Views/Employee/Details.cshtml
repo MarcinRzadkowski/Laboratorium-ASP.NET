@@ -1,0 +1,33 @@
+﻿@model Employee
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2 class="text-center">Szczegóły</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.LastName)</th>
+            <th>@Html.DisplayNameFor(model => model.PESEL)</th>
+            <th>@Html.DisplayNameFor(model => model.Departament)</th>
+            <th>@Html.DisplayNameFor(model => model.Position)</th>
+            <th>@Html.DisplayNameFor(model => model.DateOfEmployment)</th>
+            <th>@Html.DisplayNameFor(model => model.ReleaseDate)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.FirstName</td>
+            <td>@Model.LastName</td>
+            <td>@Model.PESEL</td>
+            <td>@Model.Departament</td>
+            <td>@Model.Position</td>
+            <td>@Model.DateOfEmployment</td>
+            <td>@Model.ReleaseDate</td>
+        </tr>
+    </tbody>
+</table>
+<a class="btn btn-primary" asp-action="Index" asp-controller="Employee">Wróć</a>
