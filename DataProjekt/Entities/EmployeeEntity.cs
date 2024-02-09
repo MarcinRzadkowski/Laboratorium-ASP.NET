@@ -11,7 +11,7 @@ namespace DataProjekt.Entities
     [Table("employees")]
     public class EmployeeEntity
     {
-        public int Id { get; set; }
+        public int EmployeeId { get; set; }
         
         public string FirstName { get; set; }
         

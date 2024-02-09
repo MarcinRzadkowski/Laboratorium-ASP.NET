@@ -1,4 +1,7 @@
 using Projekt.Models;
+using DataProjekt;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Projekt
 {
@@ -10,7 +13,24 @@ namespace Projekt
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddSingleton<IEmployeeService, MemoryEmployeeService>();
+            var connectionString = builder.Configuration.GetConnectionString("AppDbContextConnection") ?? throw new InvalidOperationException("Connection string 'AppDbContextConnection' not found.");
+            builder.Services.AddRazorPages();                         // doda�
+            builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<DataProjekt.AppDbContext>();
+            builder.Services.AddIdentityCore<IdentityUser>()       // doda�
+                .AddRoles<IdentityRole>()                             //
+                .AddEntityFrameworkStores<DataProjekt.AppDbContext>()
+                .AddDefaultTokenProviders();
+            //  services.addidentitycore<identityuser>().addroles<identityrole>()
+            //.addentityframeworkstores<authdbcontext>()
+            //.adddefaulttokenproviders();
+            // Add services to the container.
+            builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<AppDbContext>();
+            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppDbContext>();
+            builder.Services.AddTransient<IEmployeeService, EFEmployeeService>();
+            builder.Services.AddMemoryCache();                        // doda�
+            builder.Services.AddSession();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -26,7 +46,11 @@ namespace Projekt
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthentication();                                 // doda�
+            app.UseAuthorization();                                  // doda�
+            app.UseSession();                                        // doda� 
+            app.MapRazorPages();                                     // doda�
+
 
             app.MapControllerRoute(
                 name: "default",

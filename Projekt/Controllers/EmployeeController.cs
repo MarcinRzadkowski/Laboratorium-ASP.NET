@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Projekt.Models;
 
 namespace Projekt.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class EmployeeController : Controller
     {
         private readonly IEmployeeService _employeeService;
@@ -11,7 +13,7 @@ namespace Projekt.Controllers
         {
             _employeeService = employeeService;
         }
-
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View(_employeeService.FindAll());
@@ -63,6 +65,7 @@ namespace Projekt.Controllers
             _employeeService.Delete(employee.Id);
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "user")]
         [HttpGet]
         public IActionResult Details(int id)
         {
