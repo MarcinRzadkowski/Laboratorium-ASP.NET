@@ -5,7 +5,7 @@
         private Dictionary<int, Employee> _employees =
             new Dictionary<int, Employee>()
             {
-                {1, new Employee() {Id = 1, FirstName = "Jan", LastName = "Nowak", PESEL = "00010203456", Position = "President", Departament = Departament.Operations, DateOfEmployment = new DateTime(2001, 9, 11), ReleaseDate = new DateTime(2012, 12, 21) } }
+                {1, new Employee() {Id = 1, FirstName = "Jan", LastName = "Nowak", PESEL = "00010203456", Position = "President", Departament = "Operations", DateOfEmployment = new DateTime(2001, 9, 11), ReleaseDate = new DateTime(2012, 12, 21) } }
             };
 
         public void Add(Employee employee)

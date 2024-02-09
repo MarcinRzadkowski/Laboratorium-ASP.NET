@@ -21,7 +21,7 @@ namespace DataProjekt.Entities
         
         public string Position { get; set; }
         
-        public Departament Departament { get; set; }
+        public string Departament { get; set; }
         
         public DateTime DateOfEmployment { get; set; }
         

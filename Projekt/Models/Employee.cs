@@ -22,7 +22,7 @@ namespace Projekt.Models
         public string Position { get; set; }
         [Required(ErrorMessage = "To pole jest wymagane")]
         [Display(Name = "Dział")]
-        public Departament Departament { get; set; }
+        public string Departament { get; set; }
         [DataType(DataType.Date)]
         [Display(Name = "Data zatrudnienia")]
         public DateTime DateOfEmployment { get; set; }
